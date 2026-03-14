@@ -1,0 +1,65 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: football-analyzer
+  datasource:
+    url: jdbc:postgresql://localhost:5432/football_analyzer
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+
+
+# Football-Data.org Configuration
+football-data:
+  base-url: https://api.football-data.org/v4
+  api-key: ${FOOTBALL_DATA_API_KEY:fe9c18564c15497996570a11147690df}
+  current-season: 2025
+  current-matchday: 28
+  competitions:
+    premier-league: PL
+    serie-a: SA
+    bundesliga: BL1
+    la-liga: PD
+    championship: ELC
+
+# Claude AI Configuration
+claude:
+  api-key: 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
+  base-url: https://api.anthropic.com/v1
+  model: claude-sonnet-4-5-20250929
+  max-tokens: 2000
+
+# Gemini AI Configuration
+gemini:
+  api-key: ${GEMINI_API_KEY:AIzaSyBvYHnAeqN5GLLQdeWiPXv-CJfZIQm4gk8}
+  base-url: https://generativelanguage.googleapis.com
+  model: gemini-2.5-flash
+  max-tokens: 4000
+
+# Stryktipset (Svenska Spel) Configuration
+stryktipset:
+  base-url: https://api.spela.svenskaspel.se
+
+# CORS
+app:
+  cors:
+    allowed-origins: http://localhost:3000,http://localhost:5173
+
+logging:
+  level:
+    com.footballanalyzer: DEBUG
+    org.hibernate.SQL: WARN
