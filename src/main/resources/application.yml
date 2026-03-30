@@ -27,7 +27,7 @@ spring:
 # Football-Data.org Configuration
 football-data:
   base-url: https://api.football-data.org/v4
-  api-key: ${FOOTBALL_DATA_API_KEY:fe9c18564c15497996570a11147690df}
+  api-key: ${FOOTBALL_DATA_API_KEY}
   current-season: 2025
   current-matchday: 28
   competitions:
@@ -39,14 +39,14 @@ football-data:
 
 # Claude AI Configuration
 claude:
-  api-key: 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
+  api-key: ${CLAUDE_API_KEY}
   base-url: https://api.anthropic.com/v1
   model: claude-sonnet-4-5-20250929
   max-tokens: 2000
 
 # Gemini AI Configuration
 gemini:
-  api-key: ${GEMINI_API_KEY:AIzaSyBs43gKG3Vwg9kS6IKJX1Be-_dVeKyxzSk}
+  api-key: ${GEMINI_API_KEY}
   base-url: https://generativelanguage.googleapis.com
   model: gemini-2.5-flash
   max-tokens: 4000
