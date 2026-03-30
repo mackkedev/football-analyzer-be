@@ -111,8 +111,7 @@ public class AnalysisService {
 
         log.info("Analysis generated for {} vs {}: result={}, btts={}, o/u={}",
                 match.getHomeTeam().getName(), match.getAwayTeam().getName(),
-                analysis.getResultPrediction(), analysis.getBttsPrediction(),
-                analysis.getGoalsOverUnderPrediction());
+                analysis.getResultPrediction(), analysis.getBttsPrediction());
 
         return analysis;
     }
