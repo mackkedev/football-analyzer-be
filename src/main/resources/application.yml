@@ -5,9 +5,9 @@ spring:
   application:
     name: football-analyzer
   datasource:
-    url: jdbc:postgresql://${PGHOST:localhost}:${PGPORT:5432}/${PGDATABASE:football_analyzer}
-    username: ${PGUSER:${DB_USERNAME:postgres}}
-    password: ${PGPASSWORD:${DB_PASSWORD:postgres}}
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/football_analyzer}
+    username: ${PGUSER:${POSTGRES_USER:${DB_USERNAME:postgres}}}
+    password: ${PGPASSWORD:${POSTGRES_PASSWORD:${DB_PASSWORD:postgres}}}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
