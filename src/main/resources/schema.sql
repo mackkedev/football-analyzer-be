@@ -1,18 +1,4 @@
 -- ============================================
--- WIPE (runs on every startup — local dev)
--- ============================================
-DROP TABLE IF EXISTS prediction_accuracy CASCADE;
-DROP TABLE IF EXISTS analysis CASCADE;
-DROP TABLE IF EXISTS match_result CASCADE;
-DROP TABLE IF EXISTS team_form CASCADE;
-DROP TABLE IF EXISTS match CASCADE;
-DROP TABLE IF EXISTS gameweek CASCADE;
-DROP TABLE IF EXISTS team CASCADE;
-DROP TABLE IF EXISTS stryktipset_event CASCADE;
-DROP TABLE IF EXISTS stryktipset_draw CASCADE;
-DROP TABLE IF EXISTS league CASCADE;
-
--- ============================================
 -- LEAGUES
 -- ============================================
 CREATE TABLE IF NOT EXISTS league (
